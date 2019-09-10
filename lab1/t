@@ -1,0 +1,16 @@
+echo "One thread"
+
+S=10000
+V=1000
+U=4
+A=100
+T=1
+P=1
+
+javac.exe Dataflow.java && java.exe -Xmx2048M Dataflow $S $V $U $A $T $P
+
+echo "Four threads"
+
+T=4
+
+javac.exe Dataflow.java && java.exe -Xmx2048M Dataflow $S $V $U $A $T $P
