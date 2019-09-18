@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3057398c-75f3-458c-bae8-ad9fb74af149" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../dataflow.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../dataflow.scala" afterDir="false" />
-    </list>
+    <list default="true" id="3057398c-75f3-458c-bae8-ad9fb74af149" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -28,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/se/lth/cs/edan26/lab2.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="63" column="48" lean-forward="true" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
+            <state relative-caret-position="278">
+              <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -83,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="width" value="1620" />
     <option name="height" value="1764" />
@@ -136,6 +134,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -160,7 +159,7 @@
     <configuration name="Driver" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Driver" />
       <module name="Akka Dataflow" />
-      <option name="PROGRAM_PARAMETERS" value="1000 100 4 10 1" />
+      <option name="PROGRAM_PARAMETERS" value="100000 10000 4 10 0" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -213,39 +212,47 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568718828747</updated>
-      <workItem from="1568718833623" duration="17640000" />
+      <workItem from="1568718833623" duration="20582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17640000" />
+    <option name="totallyTimeSpent" value="20582000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1080" height="1176" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="2148" height="1184" extended-state="6" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10714286" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13680154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Build" sideWeight="0.4995183" weight="0.17039922" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32973504" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5004817" side_tool="true" weight="0.17039922" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" weight="0.32911393" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32911393" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5004817" side_tool="true" weight="0.3583252" />
       <window_info anchor="bottom" id="Messages" weight="0.32580963" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32911393" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32973504" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4995183" visible="true" weight="0.2872444" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32911393" />
       <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="sbt" />
@@ -307,8 +314,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/se/lth/cs/edan26/lab2.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="63" column="48" lean-forward="true" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
+        <state relative-caret-position="278">
+          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
