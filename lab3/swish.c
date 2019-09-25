@@ -11,9 +11,11 @@
 #define	START_BALANCE		(1000)		/* initial amount in each account. */
 #define	ACCOUNTS		(1000)		/* number of accounts. */
 #define	TRANSACTIONS		(100000)	/* number of swish transaction to do. */
-#define	THREADS			(1)		/* number of threads. */
+#define	THREADS			(2)		/* number of threads. */
 #define	PROCESSING		(10000)		/* amount of work per transaction. */
 #define	MAX_AMOUNT		(100)		/* swish limit in one transaction. */
+
+pthread_mutex_t mutex;
 
 typedef struct {
 	int		balance;
@@ -56,7 +58,7 @@ void extra_processing()
 
 void swish(account_t* from, account_t* to, int amount)
 {
-
+	pthread_mutex_lock(&mutex); 
 	if (from->balance - amount >= 0) {
 
 		extra_processing();
@@ -64,6 +66,7 @@ void swish(account_t* from, account_t* to, int amount)
 		from->balance -= amount;
 		to->balance += amount;
 	}
+	pthread_mutex_unlock(&mutex);
 }
 
 void* work(void* p)
@@ -84,7 +87,6 @@ void* work(void* p)
 
 		swish(&account[j], &account[k], a);
 	}
-
 	return NULL;
 }
 
@@ -96,6 +98,7 @@ int main(int argc, char** argv)
 	pthread_t	thread[THREADS];
 	double		begin;
 	double		end;
+	int err;
 
 	printf("swish lab computing transactions per second\n\n");
 	printf("%-*s %d\n", WIDTH, "accounts", ACCOUNTS);
@@ -111,7 +114,24 @@ int main(int argc, char** argv)
 	for (i = 0; i < ACCOUNTS; i += 1)
 		account[i].balance = START_BALANCE;
 
-	work(NULL);
+	if (pthread_mutex_init(&mutex, NULL) != 0) 
+    { 
+        printf("\n mutex init has failed\n"); 
+        return 1; 
+    } 
+	
+	while(i < THREADS) 
+    { 
+        err = pthread_create(&(thread[i]), NULL, &work, NULL); 
+        if (err != 0) 
+            printf("\nThread can't be created"); 
+        i++; 
+    } 
+
+    for(int i = 0; i < THREADS; i++){
+    	pthread_join(thread[i], NULL);
+    }
+    pthread_mutex_destroy(&mutex);
 
 	total = 0;
 
