@@ -9,10 +9,10 @@
 
 #define	WIDTH				(14)		/* text width. */
 #define	START_BALANCE		(1000)		/* initial amount in each account. */
-#define	ACCOUNTS			(100)		/* number of accounts. */
+#define	ACCOUNTS			(1000)		/* number of accounts. */
 #define	TRANSACTIONS		(100000)	/* number of swish transaction to do. */
-#define	THREADS				(4)		/* number of threads. */
-#define	PROCESSING			(10000)		/* amount of work per transaction. 400*/ 
+#define	THREADS				(128)		/* number of threads. */
+#define	PROCESSING			(1000000)		/* amount of work per transaction. 400*/ 
 #define	MAX_AMOUNT			(100)		/* swish limit in one transaction. */
 
 typedef struct {
