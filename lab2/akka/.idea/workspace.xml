@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3057398c-75f3-458c-bae8-ad9fb74af149" name="Default Changelist" comment="" />
+    <list default="true" id="3057398c-75f3-458c-bae8-ad9fb74af149" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab3/swish.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab3/swish.c" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -26,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/se/lth/cs/edan26/lab2.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+            <state relative-caret-position="3552">
+              <caret line="148" column="31" lean-forward="true" selection-start-line="148" selection-start-column="31" selection-end-line="148" selection-end-column="31" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -212,12 +215,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568718828747</updated>
-      <workItem from="1568718833623" duration="20582000" />
+      <workItem from="1568718833623" duration="22192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20582000" />
+    <option name="totallyTimeSpent" value="22192000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -248,7 +251,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4995183" visible="true" weight="0.2872444" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4995183" weight="0.2872444" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -314,8 +317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/se/lth/cs/edan26/lab2.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+        <state relative-caret-position="3552">
+          <caret line="148" column="31" lean-forward="true" selection-start-line="148" selection-start-column="31" selection-end-line="148" selection-end-column="31" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
