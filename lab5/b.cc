@@ -4,6 +4,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <iostream>
+#include <atomic>
 
 #include "timebase.h"
 
