@@ -133,7 +133,7 @@ static void consume()
 		f = factorial(n);
 		//sum_mutex.lock();
 		VAR ^= 1234; 
-		sum += f; 
+		sum.fetch_add(f, std::memory_order_relaxed); 
 		VAR ^= 5678; 
 		//sum_mutex.unlock(); 
 	}
