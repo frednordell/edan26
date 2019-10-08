@@ -98,7 +98,7 @@ public:
 };
 
 static worklist_t*			worklist;
-static std::automic<unsigned long long>	sum;
+static std::atomic<unsigned long long>	sum;
 static int					iterations;
 static int					max;
 //std::mutex					sum_mutex;
