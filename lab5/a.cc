@@ -3,6 +3,7 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include <iostream>
 
 #include "timebase.h"
 
@@ -10,6 +11,10 @@ class worklist_t {
 	int*			a;
 	size_t			n;
 	size_t			total;	// sum a[0]..a[n-1]
+
+	std::mutex mutex;
+	std::condition_variable cv; 
+
 		
 public:
 	worklist_t(size_t max)
@@ -31,14 +36,20 @@ public:
 
 	void reset()
 	{
+		mutex.lock();
 		total = 0;
 		memset(a, 0, n*sizeof a[0]);
+		mutex.unlock(); 
 	}
 
 	void put(int num)
 	{
+		mutex.lock()
 		a[num] += 1;
 		total += 1;
+		cv.notify_all();
+		mutex.unlock(); 
+
 	}
 
 	int get()
@@ -46,7 +57,6 @@ public:
 		int				i;
 		int				num;
 
-#if 0
 		/* hint: if your class has a mutex m
 		 * and a condition_variable c, you
 		 * can lock it and wait for a number 
@@ -54,7 +64,7 @@ public:
 		 *
 		 */
 
-		std::unique_lock<std::mutex>	u(m);
+		std::unique_lock<std::mutex>	u(mutex);
 
 		/* the lambda is a predicate that 
 		 * returns false when waiting should 
@@ -67,8 +77,8 @@ public:
 		 *
 		 */
 
-		c.wait(u, [this]() { return total > 0; } );
-#endif
+		cv.wait(u, [this]() { return total > 0; } );
+
 
 		for (i = 1; i <= n; i += 1)
 			if (a[i] > 0)
@@ -87,10 +97,11 @@ public:
 	}
 };
 
-static worklist_t*		worklist;
+static worklist_t*			worklist;
 static unsigned long long	sum;
-static int			iterations;
-static int			max;
+static int					iterations;
+static int					max;
+std::mutex					sum_mutex;
 
 static void produce()
 {
@@ -116,7 +127,9 @@ static void consume()
 
 	while ((n = worklist->get()) > 0) {
 		f = factorial(n);
+		sum_mutex.lock();
 		sum += f;
+		sum_mutex.unlock(); 
 	}
 }
 
