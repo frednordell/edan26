@@ -44,7 +44,7 @@ public:
 
 	void put(int num)
 	{
-		mutex.lock()
+		mutex.lock();
 		a[num] += 1;
 		total += 1;
 		cv.notify_all();
