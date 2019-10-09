@@ -5,7 +5,7 @@
 #include <condition_variable>
 #include <iostream>
 #include <atomic>
-
+#include <chrono>
 #include "timebase.h"
 
 class spin_lock {
@@ -17,6 +17,7 @@ class spin_lock {
 		{
 			bool expected = false;
 			while(!std::atomic_compare_exchange_weak_explicit(&flag, &expected, true, std::memory_order_acquire, std::memory_order_relaxed)){
+				std::this_thread::sleep_for(std::chrono::microseconds(1));
 				expected = false;
 				while(flag);
 			}
@@ -108,7 +109,7 @@ static std::atomic<unsigned long long>	sum;
 static int					iterations;
 static int					max;
 //volatile int 				VAR;
-std::mutex					sum_mutex;
+//std::mutex					sum_mutex;
 
 static void produce()
 {
@@ -134,11 +135,11 @@ static void consume()
 
 	while ((n = worklist->get()) > 0) {
 		f = factorial(n);
-		sum_mutex.lock();
+		//sum_mutex.lock();
 		//VAR ^= 1234;
 		sum.fetch_add(f, std::memory_order_relaxed);
 		//VAR ^= 5678;
-		sum_mutex.unlock();
+		//sum_mutex.unlock();
 	}
 }
 
