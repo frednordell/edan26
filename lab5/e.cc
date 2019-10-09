@@ -108,7 +108,7 @@ static std::atomic<unsigned long long>	sum;
 static int					iterations;
 static int					max;
 //volatile int 				VAR;
-//std::mutex					sum_mutex;
+std::mutex					sum_mutex;
 
 static void produce()
 {
@@ -134,11 +134,11 @@ static void consume()
 
 	while ((n = worklist->get()) > 0) {
 		f = factorial(n);
-		//sum_mutex.lock();
+		sum_mutex.lock();
 		//VAR ^= 1234;
 		sum.fetch_add(f, std::memory_order_relaxed);
 		//VAR ^= 5678;
-		//sum_mutex.unlock();
+		sum_mutex.unlock();
 	}
 }
 
