@@ -65,10 +65,10 @@ public:
 
 	void put(int num)
 	{
-		mutex.lock();
+		//mutex.lock();
 		a[num] += 1;
 		total += 1;
-		mutex.unlock();
+		//mutex.unlock();
 
 	}
 
