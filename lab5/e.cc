@@ -147,14 +147,14 @@ static void work()
 {
 	sum = 0;
 	worklist->reset();
-
-	std::thread p(produce);
+	produce();
+	//std::thread p(produce);
 	std::thread a(consume);
 	std::thread b(consume);
 	std::thread c(consume);
 	std::thread d(consume);
 
-	p.join();
+	//p.join();
 	a.join();
 	b.join();
 	c.join();
