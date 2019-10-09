@@ -26,7 +26,6 @@ class spin_lock {
 		{
 			flag.store(false, std::memory_order_release);
 		}
-
 };
 
 class worklist_t {
@@ -57,10 +56,10 @@ public:
 
 	void reset()
 	{
-		mutex.lock();
+		//mutex.lock();
 		total = 0;
 		memset(a, 0, n*sizeof a[0]);
-		mutex.unlock();
+		//mutex.unlock();
 	}
 
 	void put(int num)
