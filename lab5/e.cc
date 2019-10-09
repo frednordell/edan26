@@ -16,7 +16,7 @@ class spin_lock {
 		void lock()
 		{
 			bool expected = false;
-			while(!flag.compare_exchange_weak(expected, true, std::memory_order_acquire, std::memory_order_relaxed)){
+			while(!flag.compare_exchange_weak_explicit(expected, true, std::memory_order_acquire, std::memory_order_relaxed)){
 				expected = false;
 				while(flag);
 			}
