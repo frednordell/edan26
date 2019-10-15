@@ -1,0 +1,11 @@
+CLANG
+real 14.424s
+
+PARALLELIZE
+real: 14.661s
+
+OMP
+real 6.977s
+
+XLC
+real: 0.351s

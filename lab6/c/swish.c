@@ -46,9 +46,9 @@ void error(char* fmt, ...)
 	exit(EXIT_FAILURE);
 }
 
-void extra_processing()
+void __attribute__((transaction_safe)) extra_processing()
 {
-	volatile int	i;
+	int	i;
 
 	for (i = 0; i < PROCESSING; i += 1)
 		;
@@ -59,13 +59,14 @@ void swish(account_t* from, account_t* to, int amount)
 
 	if (from->balance - amount >= 0) {
 
-		extra_processing();
-
-		from->balance -= amount;
-		to->balance += amount;
+		
+		__transaction_atomic {
+			extra_processing();
+			from->balance -= amount;
+			to->balance += amount;
+		}
 	}
 }
-
 void* work(void* p)
 {
 	int		i;
