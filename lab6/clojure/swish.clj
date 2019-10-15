@@ -1,7 +1,7 @@
 (def start-balance 1000)
-(def num-accounts 4)
-(def num-transactions 10)
-(def num-threads 1)
+(def num-accounts 3000)
+(def num-transactions 3000)
+(def num-threads 6)
 (def extra-processing 1000)	
 (def max-amount	100)
 
@@ -47,4 +47,3 @@
 
 
 (main)
-(println (map deref accounts))

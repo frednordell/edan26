@@ -1,0 +1,55 @@
+Accounts: 4
+transactions: 10
+threads: 1
+
+real: 0m3.026s
+
+Accounts: 1000
+real: 0m3.207s
+
+Accounts: 2000
+real: 0m3.160s
+
+Accounts: 3000
+real: 0m3.570s
+
+Accounts: 4000
+real: 0m3.105s
+
+Accoutns: 5000
+real: 3.14s
+
+accounts: 6000
+real: 3.118
+
+accounts: 7000
+real: Stack owerflow
+
+----------------------------------------
+
+Accounts: 4
+threads: 1
+
+transacions: 1000
+real: 3.731
+
+transactions: 2000
+real: 3.6
+
+transactions: 3000
+real: 8.136
+
+SLOWER!!
+
+thread3.113
+
+threads: 8
+real: 4.028
+
+threads: 6
+real: 3.128
+
+accounts: 4000
+real: 3.092
+
+accounts:   

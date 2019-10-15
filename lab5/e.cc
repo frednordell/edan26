@@ -17,7 +17,7 @@ class spin_lock {
 		{
 			bool expected = false;
 			while(!std::atomic_compare_exchange_weak_explicit(&flag, &expected, true, std::memory_order_acquire, std::memory_order_relaxed)){
-				std::this_thread::sleep_for(std::chrono::microseconds(1));
+				std::this_thread::sleep_for(std::chrono::nanoseconds(1));
 				expected = false;
 				while(flag);
 			}
