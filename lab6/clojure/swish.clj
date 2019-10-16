@@ -1,6 +1,6 @@
 (def start-balance 1000)
-(def num-accounts 3000)
-(def num-transactions 3000)
+(def num-accounts 6500)
+(def num-transactions 3500)
 (def num-threads 6)
 (def extra-processing 1000)	
 (def max-amount	100)

@@ -9,10 +9,10 @@
 
 #define	WIDTH			(14)		/* text width. */
 #define	START_BALANCE		(1000)		/* initial amount in each account. */
-#define	ACCOUNTS		(1000)		/* number of accounts. */
-#define	TRANSACTIONS		(100000)	/* number of swish transaction to do. */
-#define	THREADS			(1)		/* number of threads. */
-#define	PROCESSING		(10000)		/* amount of work per transaction. */
+#define	ACCOUNTS		(100000)		/* number of accounts. */
+#define	TRANSACTIONS		(1000000)	/* number of swish transaction to do. */
+#define	THREADS			(24)		/* number of threads. */
+#define PROCESSING		(10000000000)	/* amount of processing */
 #define	MAX_AMOUNT		(100)		/* swish limit in one transaction. */
 
 typedef struct {
@@ -57,10 +57,10 @@ void __attribute__((transaction_safe)) extra_processing()
 void swish(account_t* from, account_t* to, int amount)
 {
 
-	if (from->balance - amount >= 0) {
 
 		
 		__transaction_atomic {
+	if (from->balance - amount >= 0) {
 			extra_processing();
 			from->balance -= amount;
 			to->balance += amount;
@@ -111,8 +111,14 @@ int main(int argc, char** argv)
 
 	for (i = 0; i < ACCOUNTS; i += 1)
 		account[i].balance = START_BALANCE;
-
-	work(NULL);
+	
+	for (i = 0; i < THREADS; i += 1) {
+		pthread_create(&(thread[i]), NULL, work, NULL);
+	}
+	
+	for (i = 0; i < THREADS; i += 1) {
+		pthread_join(thread[i], NULL);
+	}
 
 	total = 0;
 
